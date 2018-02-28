@@ -259,6 +259,11 @@ output.icecast(%fdkaac(channels=2, samplerate=44100, bitrate=64, sbr_mode=false,
 transmux="adts"), host="HOST", port=PORT, password="ICECASTPASSWORD", mount="AACMOUNT.AAC",
 description="STREAM DESCRIPTION", fallible=true, url="RADIO.URL", s)
 
+# opus (96k)
+output.icecast(%opus(vbr="unconstrained", application="audio", complexity=10, max_bandwidth="full_band",samplerate=48000,
+frame_size=20., bitrate=96, channels=2, signal="music"), host="localhost", port=8000, password="ICECASTPASSWORD", mount="OPUSMOUNT.OGG",
+description="STREAM DESCRIPTION",fallible=true, url="RADIO.URL", s)
+
 output.dummy(fallible=true, source) #needed for a weird bug that sometimes causes a memory leak
 
 
