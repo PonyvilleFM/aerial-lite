@@ -264,7 +264,7 @@ output.icecast(%opus(vbr="unconstrained", application="audio", complexity=10, ma
 frame_size=20., bitrate=96, channels=2, signal="music"), host="localhost", port=8000, password="ICECASTPASSWORD", mount="OPUSMOUNT.OGG",
 description="STREAM DESCRIPTION",fallible=true, url="RADIO.URL", s)
 
-output.dummy(fallible=true, source) #needed for a weird bug that sometimes causes a memory leak
+output.dummy(fallible=true, s)
 
 
 
